@@ -7,13 +7,9 @@ from rest_framework.response import Response
 from .filters import AuthorFilter, BookFilter
 from .models import Author, Book, Loan
 from .permissions import IsAdminOrReadOnly, IsOwnerOrAdmin
-from .serializers import (
-    AuthorSerializer,
-    BookSerializer,
-    IssueInputSerializer,
-    LoanSerializer,
-    ReturnInputSerializer,
-)
+from .serializers import (AuthorSerializer, BookSerializer,
+                          IssueInputSerializer, LoanSerializer,
+                          ReturnInputSerializer)
 from .services import issue_book, return_loan
 
 
