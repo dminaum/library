@@ -13,7 +13,7 @@ REST API для управления библиотекой: книги, авт�
 - SimpleJWT
 - drf-spectacular
 - Docker, Docker Compose
-- pytest, pre-commit, black, isort, flake8
+- pytest
 
 ---
 
