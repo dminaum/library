@@ -1,3 +1,4 @@
+from django_filters.rest_framework import DjangoFilterBackend
 from drf_spectacular.utils import extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action
@@ -23,7 +24,7 @@ class AuthorViewSet(viewsets.ModelViewSet):
     serializer_class = AuthorSerializer
     permission_classes = (IsAdminOrReadOnly,)
     filterset_class = AuthorFilter
-    filter_backends = (SearchFilter, OrderingFilter)
+    filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter)
     search_fields = ("first_name", "last_name", "bio")
     ordering_fields = ("last_name", "first_name", "created_at")
 
@@ -34,7 +35,7 @@ class BookViewSet(viewsets.ModelViewSet):
     serializer_class = BookSerializer
     permission_classes = (IsAdminOrReadOnly,)
     filterset_class = BookFilter
-    filter_backends = (SearchFilter, OrderingFilter)
+    filter_backends = (DjangoFilterBackend, SearchFilter, OrderingFilter)
     search_fields = ("title", "description")
     ordering_fields = ("published_year", "title", "created_at")
 
